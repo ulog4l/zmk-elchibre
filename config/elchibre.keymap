@@ -132,6 +132,6 @@
                 &kp LSHFT  &kp X   &kp C      &kp V  &kp B    &trans &trans &trans &trans &tog GAMING 
                                    &trans         &kp SPACE     &lt BASE BACKSPACE       &kp TAB
             >;
-        }
+        };
     };
 };
