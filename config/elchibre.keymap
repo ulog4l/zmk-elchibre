@@ -10,6 +10,7 @@
 #define SYM 3
 #define FUNC 4
 #define GAMING 5
+#define BT 6
 
 &lt {
     tapping-term-ms = <120>;
@@ -83,7 +84,7 @@
 
         BASE {
             bindings = <
-                &mt LS(LALT) ESC   &lt FUNC W    &kp F      &kp P      &kp B     &kp J &kp L      &kp U     &mt LGUI Y    &kp SEMI
+                &mt LS(LALT) ESC   &lt FUNC W    &kp F      &kp P      &kp B     &kp J &kp L      &kp U     &mt LGUI Y    &lt BT SEMI
                 &kp A              &mt LGUI R    &lt NUM S  &lt SYM T  &kp G     &kp M &lt NAV N &kp E     &kp I         &kp O
                 &sk LSHFT          &mt LCTRL X   &kp C      &kp D      &kp V     &kp K &kp H      &kp COMMA &kp Z         &kp RSHFT 
                                    &kp LALT         &lt NAV SPACE     &kp BACKSPACE       &kp RALT
@@ -133,5 +134,14 @@
                                    &trans         &kp SPACE     &lt BASE BACKSPACE       &kp TAB
             >;
         };
+        BT {
+            bindings = <
+                  &trans &trans &trans &trans &trans  &trans  &trans &trans &trans &trans
+                  &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+                  &bt BT_CLR &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &trans &trans &trans &trans &trans
+                                   &trans         &trans     &trans       &trans
+            >;
+        };
+
     };
 };
