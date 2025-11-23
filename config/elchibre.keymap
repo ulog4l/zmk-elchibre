@@ -3,6 +3,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
+#define BASE 0
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUNC 4
+#define GAMING 5
+
 &lt {
     tapping-term-ms = <120>;
     flavor = "balanced";
@@ -16,15 +24,55 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <27>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp Q>;
         };
         combo_enter {
-            timeout-ms = <27>;
-            key-positions = <17 18>;
+            timeout-ms = <50>;
+            key-positions = <13 14>;
             bindings = <&kp ENTER>;
+        };
+        combo_ae {
+            timeout-ms = <50>;
+            key-positions = <2 11>;
+            bindings = <&kp RA(Q)>;
+        };
+        combo_oe {
+            timeout-ms = <50>;
+            key-positions = <2 13>;
+            bindings = <&kp RA(Q)>;
+        };
+        combo_ue {
+            timeout-ms = <50>;
+            key-positions = <7 16>;
+            bindings = <&kp RA(Q)>;
+        };
+        combo_ss {
+            timeout-ms = <50>;
+            key-positions = <7 18>;
+            bindings = <&kp RA(Q)>;
+        };
+        combo_quot {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp SQT>;
+        };
+        combo_dot {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp DOT>;
+        };
+        combo_ctrl {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&sk LCTRL>;
+        };
+        combo_alt{
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&sk LALT>;
         };
     };
 };
@@ -35,38 +83,55 @@
 
         BASE {
             bindings = <
-                &mt LS(LALT) ESC   &lt FUNC W  &kp F      &kp P      &kp B     &kp J &kp L      &kp U     &kp Y    &kp SEMI
-                &kp A              &mt LG R    &lt NUM S  &lt SYM T  &kp G     &kp M &lt NAVN N &kp E     &kp I    &kp O
-                &sk LS             &kp X       &kp C      &kp D      &kp V     &kp K &kp H      &kp COMMA &kp Z    &kp RSHIFT 
-                                   &kp LALT         &lt NAVT SPACE     &kp BACKSPACE       &kp RALT
+                &mt LS(LALT) ESC   &lt FUNC W    &kp F      &kp P      &kp B     &kp J &kp L      &kp U     &mt LGUI Y    &kp SEMI
+                &kp A              &mt LGUI R    &lt NUM S  &lt SYM T  &kp G     &kp M &lt NAV N &kp E     &kp I         &kp O
+                &sk LSHFT          &mt LCTRL X   &kp C      &kp D      &kp V     &kp K &kp H      &kp COMMA &kp Z         &kp RSHFT 
+                                   &kp LALT         &lt NAV SPACE     &kp BACKSPACE       &kp RALT
             >;
         };
 
-        function {
+        NUM {
             bindings = <
-                &trans    &kp F7 &kp F8 &kp F9 &kp F12          &bt BT_CLR_ALL &trans &trans &trans &bootloader
-                &kp LSHFT &kp F4 &kp F5 &kp F6 &kp F11          &trans &trans &trans &trans &kp RSHIFT
-                &kp LCTRL &kp F1 &kp F2 &kp F3 &kp F10          &trans &trans &trans &trans &kp RCTRL
-                              &trans         &trans             &trans         &trans
+                &kp GRAVE          &kp MINUS  &trans     &trans        &trans         &trans       &kp N7      &kp N8     &kp N9    &trans
+                &kp EQUAL          &kp PLUS   &trans     &kp FSLH      &kp BSLH       &kp TILDE    &kp N4      &kp N5     &kp N6    &trans
+                &kp LSHFT          &kp COLON  &trasn     &kp LPAR      &kp RPAR       &kp N0       &kp N1      &kp N2     &kp N3    &trans 
+                                                         &trans         &trans     &trans       &kp RET
             >;
         };
 
-        symbols {
+        SYM {
             bindings = <
-                &kp Q         &kp N7 &kp N8 &kp N9 &kp EQUAL       &trans &kp GRAVE &kp LPAR &kp RPAR &trans
-                &mt LSHIFT N0 &kp N4 &kp N5 &kp N6 &kp MINUS       &trans &kp SQT   &kp LBRC &kp RBRC &kp RSHIFT
-                &kp KP_SLASH  &kp N1 &kp N2 &kp N3 &kp KP_DOT      &trans &kp NUBS  &kp LBKT &kp RBKT &kp RCTRL
-                                       &trans          &trans      &trans   &trans
+                &trans &trans &trans &trans &trans &trans &kp LS(N7) &kp LS(N8) &kp SEMI   &trans
+                &trans &trans &UNDER &trans &trans &trans &kp LS(N4) &kp LS(N5) &kp LS(N6) &trans
+                &trans &trans &trans &trans &trans &QMARK &kp LS(N1) &kp LS(N2) &kp LS(N3) &trans
+                                   &trans         &trans     &trans       &trans
             >;
         };
 
-        navigation {
+        NAV {
             bindings = <
-                &trans    &kp C_VOL_DN &kp C_VOL_UP &trans &trans          &kp INS   &kp HOME     &kp UP   &kp END   &trans
-                &kp LSHFT &kp C_PREV   &kp C_NEXT   &trans &trans          &kp PG_UP &kp LEFT     &kp DOWN &kp RIGHT &kp RSHFT
-                &kp LCTRL &trans       &trans       &trans &trans          &kp PG_DN &kp LC(LEFT) &trans   &kp LC(RIGHT)    &kp RCTRL
-                                       &trans              &kp DEL         &kp ENTER    &trans
+                &trans  &kp ESC  &kp UP   &kp LALT  &trans  &trans &trans &trans &trans &trans 
+                &kp TAB &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans
+                &trans  &trans   &trans   &kp DEL   &kp INS &trans &trans &trans &trans &tog GAMING 
+                                   &trans         &trans     &trans       &trans
             >;
         };
+
+        FUNC {
+            bindings = <
+                &trans &trans &trans &kp LBKT &kp RBKT    &kp F12 &kp F7 &kp F8 &kp F9 &bootloader 
+                &trans &trans &trans &kp LT &kp GT        &kp F11 &kp F4 &kp F5 &kp F6 &trans
+                &trans &trans &trans &trans &trans        &kp F10 &kp F1 &kp F2 &kp F3 &trans
+                                   &trans         &trans     &trans       &trans
+            >;
+        };
+        GAMING {
+            bindings = <
+                &kp ESC  &kp Q  &kp W   &kp E  &kp R    &trans &trans &trans &trans &trans 
+                &kp LCTRL &kp A &kp S   &kp D  &F       &trans &trans &trans &trans &trans
+                &kp LSHFT  &X   &C      &kp V  &kp B    &trans &trans &trans &trans &tog GAMING 
+                                   &trans         &kp SPACE     &lt BASE BACKSPACE       &kp TAB
+            >;
+        }
     };
 };
