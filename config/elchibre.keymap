@@ -102,7 +102,7 @@
         SYM {
             bindings = <
                 &trans &trans &trans &trans &trans &trans &kp LS(N7) &kp LS(N8) &kp SEMI   &trans
-                &trans &trans &UNDER &trans &trans &trans &kp LS(N4) &kp LS(N5) &kp LS(N6) &trans
+                &trans &trans &kp UNDER &trans &trans &trans &kp LS(N4) &kp LS(N5) &kp LS(N6) &trans
                 &trans &trans &trans &trans &trans &QMARK &kp LS(N1) &kp LS(N2) &kp LS(N3) &trans
                                    &trans         &trans     &trans       &trans
             >;
@@ -128,8 +128,8 @@
         GAMING {
             bindings = <
                 &kp ESC  &kp Q  &kp W   &kp E  &kp R    &trans &trans &trans &trans &trans 
-                &kp LCTRL &kp A &kp S   &kp D  &F       &trans &trans &trans &trans &trans
-                &kp LSHFT  &X   &C      &kp V  &kp B    &trans &trans &trans &trans &tog GAMING 
+                &kp LCTRL &kp A &kp S   &kp D  &kp F       &trans &trans &trans &trans &trans
+                &kp LSHFT  &kp X   &kp C      &kp V  &kp B    &trans &trans &trans &trans &tog GAMING 
                                    &trans         &kp SPACE     &lt BASE BACKSPACE       &kp TAB
             >;
         }
