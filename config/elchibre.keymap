@@ -22,6 +22,8 @@
     flavor = "balanced";
 };
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -87,7 +89,7 @@
                 &mt LS(LALT) ESC   &lt FUNC W    &kp F      &kp P      &kp B     &kp J &kp L      &kp U     &mt LGUI Y    &lt BT SEMI
                 &kp A              &mt LGUI R    &lt NUM S  &lt SYM T  &kp G     &kp M &lt NAV N &kp E     &kp I         &kp O
                 &sk LSHFT          &mt LCTRL X   &kp C      &kp D      &kp V     &kp K &kp H      &kp COMMA &kp Z         &kp RSHFT 
-                                   &kp LALT         &lt NAV SPACE     &kp BACKSPACE       &kp RALT
+                                   &kp LALT         &lt NAV SPACE   &kp BACKSPACE       &kp RALT
             >;
         };
 
