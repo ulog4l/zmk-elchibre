@@ -102,6 +102,15 @@
             >;
         };
 
+        NAV {
+            bindings = <
+                &trans  &kp ESC  &kp UP   &kp LALT  &trans  &trans &trans &trans &trans &trans 
+                &kp TAB &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans
+                &trans  &trans   &trans   &kp DEL   &kp INS &trans &trans &trans &trans &tog GAMING 
+                                   &trans         &trans     &trans       &trans
+            >;
+        };
+
         SYM {
             bindings = <
                 &trans &trans &trans &trans &trans &trans &kp LS(N7) &kp LS(N8) &kp SEMI   &trans
@@ -111,14 +120,7 @@
             >;
         };
 
-        NAV {
-            bindings = <
-                &trans  &kp ESC  &kp UP   &kp LALT  &trans  &trans &trans &trans &trans &trans 
-                &kp TAB &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans
-                &trans  &trans   &trans   &kp DEL   &kp INS &trans &trans &trans &trans &tog GAMING 
-                                   &trans         &trans     &trans       &trans
-            >;
-        };
+        
 
         FUNC {
             bindings = <
